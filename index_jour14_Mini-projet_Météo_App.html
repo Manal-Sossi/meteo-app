@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌦️ Météo App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74b9ff, #0984e3);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carte {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h1 {
+      color: #0984e3;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .zone-recherche {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #0984e3;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #0984e3;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #074f8a;
+    }
+
+    #resultat {
+      margin-top: 20px;
+    }
+
+    .meteo-carte {
+      background: linear-gradient(135deg, #74b9ff, #0984e3);
+      color: white;
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .meteo-ville {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .meteo-temp {
+      font-size: 60px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .meteo-desc {
+      font-size: 18px;
+      text-transform: capitalize;
+    }
+
+    .meteo-details {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    #message-erreur {
+      color: red;
+      margin-top: 10px;
+    }
+
+    #historique {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    #historique h3 {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .liste-historique {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-historique {
+      padding: 6px 12px;
+      background: #f0f0f0;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .btn-historique:hover {
+      background: #ddd;
+    }
+
+    #chargement {
+      color: #0984e3;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<!--#####################################################################-->
+
+<body>
+  <div class="carte">
+    <h1>🌦️ Météo App</h1>
+
+    <div class="zone-recherche">
+      <input type="text" id="champVille" placeholder="Entrez une ville..."/>
+      <button id="btnRechercher">Chercher</button>
+    </div>
+
+    <div id="chargement"></div>
+    <div id="message-erreur"></div>
+    
+    <div id="resultat">
+
+    </div>
+
+    <div id="historique">
+      <h3>🕐 Recherches récentes :</h3>
+      <div class="liste-historique" id="listeHistorique"></div>
+    </div>
+  </div>
+
+  <script src="script_jour14_Mini-projet_Météo_App.js"></script>
+</body>
+</html>
